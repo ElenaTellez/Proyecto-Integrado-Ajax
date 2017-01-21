@@ -1,0 +1,253 @@
+@import url(https://www.google.com/fonts#UsePlace:use/Collection:Lobster);
+
+body {
+    background-color: beige;
+    font-family: 'Lobster', cursive;
+    font-size: 18px;
+    margin: 0px;
+}
+
+#encabezado{
+    width: 1200px;
+    height: 206px;
+    margin: auto;
+    overflow: hidden;
+}
+
+#header {
+    width: 780px;
+    height: 200px;
+    background: #4da6ff;
+    border-radius:25px;
+    border-style: groove;
+    float: left;
+}
+
+#contenedor {
+    width: 100%;
+    overflow: hidden;
+}
+#titulo {
+    margin:auto;
+    width: 40%;
+}
+ 
+
+/*MEJORA PARA NAVEGADORES*/
+
+img {
+    float: left;
+    width: 20%;
+    max-width: 100%;
+    margin-top: 17px;
+    margin-left: 50px;
+    margin-right: 20px;
+    border-radius:25px;
+    box-shadow: -5px -5px 10px grey;
+    -webkit-box-shadow: -5px -5px 10px grey;
+    -moz-box-shadow: -5px -5px 10px grey;
+}
+
+
+h1 {
+    color: white;
+    text-shadow: 1px 1px 0px rgb(230,230,230),
+2px 2px 0px rgb(200,200,200),
+3px 3px 0px rgb(180,180,180),
+4px 4px 0px rgb(160,160,160),
+ 5px 5px 0px rgb(0,0,0), 8px 8px 20px rgb(0,0,0);
+}
+
+
+#login {
+    width: 400px;
+    height: 200px;
+    text-align: center;
+    background: #4da6ff;
+    border-radius:24px;
+    border-style: groove;
+    float: left;
+}
+
+/*USO DE SPRITES CODIGO CSS*/
+
+span {
+	background-image:url("../img/sprites.png"); 
+	/*background-repeat: no-repeat;no usar si son varios los sprites de una misma imagen*/ 
+	width: 30px;
+	height: 30px;
+	display: inline-block; /*Elemento funciona en linea y no da salto de linea*/
+	vertical-align:middle;
+	}
+#uno {
+	background-position: -250px -242px;
+        border-radius:100px;
+	}
+
+#dos {
+	background-position: -35px -185px;
+        border-radius:100px;
+	}        
+
+#menu {
+    width: 1220px;
+    margin: auto;      
+}
+
+#menu ul {
+    list-style-type:none;
+    list-style-image:none;
+    display: flex;
+    flex-direction:row; /*por defecto es row horizontal y no column que es vertical*/	 
+}
+
+#menu ul li{
+    flex-grow: 1; /*separa los elementos de la lista*/
+}	
+
+#menu ul li a{
+    background-color: #4da6ff;
+    color:#ffffe6;
+    font-weight: bold;
+    display:block;/*este elemento se comporta en linea y quiero que lo haga en bloque para usar el ancho del contedor*/
+    margin-right:1px;
+    text-align:center;
+    text-decoration:none;
+    padding:0.4em; /*50% del tamaño del body*/
+    border-radius: 24px; 
+    border-style: groove;
+    cursor: pointer;
+    
+}
+
+div #menu ul li a:hover {
+    background-color:red;
+} 
+
+a:link {   
+    text-decoration:none;   
+} 
+
+#contenido{
+    display:block;
+    margin: auto;
+    text-align: justify;
+    width: 1200px;
+    background: #4da6ff;
+    border-radius:25px;
+    border-style: groove;
+    padding: 30px;
+}
+
+.boton {
+    background-color:rgb;
+    color: cornflowerblue;
+    text-shadow:1px 1px 1px black;
+}   
+
+/*CARRUSEL DE IMAGENES*/
+
+#galeria {
+    background-color: #e6e6e6;
+    border-radius:25px;
+    border-style: groove;
+    box-sizing: border-box;
+    height: 200px;
+    overflow: hidden; 
+    width: 60%;
+    margin:auto;
+}
+
+#portaFoto{
+    height: 250px;
+    width: 2800px;
+    background-color: blue;
+    top: -20px;
+    left:-10px;
+    position:relative;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-name: desplazarFoto;
+    animation-timing-function: linear;
+}
+
+@keyframes desplazarFoto {
+
+    from{
+        left:-100px;
+    } 
+    to{ 
+        left:-1000px;
+    }  
+}
+
+.foto1 {
+    height: 250px;
+    width: 200px;
+    position:relative;
+    float:left;
+    background-image: url("../img/logo.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;  
+}
+
+
+.foto2 {
+    height: 250px;
+    width: 200px;
+    position:relative;
+    float: left;
+    background-image: url("../img/logo2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;  
+}
+
+.foto3 {
+    height: 250px;
+    width: 200px;
+    position:relative;
+    float:left;  
+    background-image: url("../img/gesti_sport.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;  
+}
+
+@media screen and (max-width: 759px) { 
+  /* CSS para cuando el dispositivo es menor de 760 px */
+  
+  #encabezado.flex-container-inline {
+    height: 100px;
+    width: 70%;
+  }
+  
+  .menu.flex-container {
+    display:-webkit-flex; 
+    display: -ms-flexbox; 
+    display: flex; 
+    -webkit-flex-direction: column-reverse; 
+    -ms-flex-direction: column-reverse; 
+    flex-direction: column-reverse;
+    -webkit-flex-wrap: nowrap; 
+    -ms-flex-wrap: nowrap; 
+    flex-wrap: nowrap;
+    -webkit-align-content: flex-start; 
+    -ms-flex-line-pack: start; 
+    align-content: flex-start;
+    -webkit-justify-content: space-between; 
+    -ms-flex-pack: justify; 
+    justify-content: space-between; 
+    } 
+    
+  #contenido.flex-container {
+      box-sizing: border-box;
+    display:-webkit-flex; 
+    display: -ms-flexbox; 
+    display: flex; 
+    flex-wrap: wrap;
+    -webkit-flex-direction: column; 
+    -ms-flex-direction: column; 
+    flex-direction: column;
+    -webkit-flex-wrap: wrap; 
+    -ms-flex-wrap: wrap; 
+    width: 100%;   
+    }
