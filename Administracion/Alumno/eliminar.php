@@ -6,8 +6,7 @@ try {
     die("Error: " . $e->getMessage());
 }
 
-$seleccionado = $_GET["dni"];
-$consulta = $conexion->query("DELETE FROM alumno WHERE dni = $seleccionado");
+$consulta = $conexion->query("DELETE FROM alumno WHERE dni = \"".$_GET['dni']."\"");
 
 $conexion->exec($consulta);
     
